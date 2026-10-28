@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Convertisseur FCFA</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon.svg" alt="" width="28" height="28">
+    <h1>Convertisseur FCFA</h1>
+  </header>
+
+  <label class="row" for="enabled">
+    <span>Conversion automatique</span>
+    <input type="checkbox" id="enabled" role="switch">
+  </label>
+
+  <label class="field" for="mode">
+    <span>Affichage</span>
+    <select id="mode">
+      <option value="replace">FCFA uniquement</option>
+      <option value="both">FCFA, avec le montant d'origine</option>
+    </select>
+  </label>
+
+  <label class="field" for="dollar">
+    <span>Le symbole $ désigne</span>
+    <select id="dollar">
+      <option value="USD">Dollar américain (USD)</option>
+      <option value="CAD">Dollar canadien (CAD)</option>
+      <option value="AUD">Dollar australien (AUD)</option>
+      <option value="NZD">Dollar néo-zélandais (NZD)</option>
+    </select>
+  </label>
+
+  <footer>
+    <p id="status"></p>
+    <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">Rates By Exchange Rate API</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

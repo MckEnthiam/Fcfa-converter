@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Convertisseur FCFA",
+  "version": "1.0.0",
+  "description": "Convertit automatiquement les montants affichés (dollar, euro, livre...) en FCFA sur toutes les pages.",
+  "icons": { "48": "icons/icon.svg", "96": "icons/icon.svg" },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fcfa-converter@local",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "permissions": ["storage", "alarms", "https://open.er-api.com/*"],
+  "background": { "scripts": ["background.js"], "persistent": false },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["convert.js", "content.js"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon.svg",
+    "default_title": "Convertisseur FCFA",
+    "default_popup": "popup/popup.html"
+  }
+}
